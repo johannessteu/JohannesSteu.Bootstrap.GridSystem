@@ -84,3 +84,29 @@
                 label: '33% / 33% / 33%'
               '25-50-25':
                 label: '25% / 50% / 25%'
+
+'JohannesSteu.Bootstrap.GridSystem:FourColumn':
+  superTypes: ['JohannesSteu.Bootstrap.GridSystem:Row']
+  ui:
+    label: 'Bootstrap 4 Columns'
+  childNodes:
+    column1:
+      type: 'TYPO3.Neos:ContentCollection'
+    column2:
+      type: 'TYPO3.Neos:ContentCollection'
+    column3:
+      type: 'TYPO3.Neos:ContentCollection'
+    column4:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    cntColumns:
+      defaultValue: 'Four'
+    layout:
+      defaultValue: '25-25-25-25'
+      ui:
+        reloadIfChanged: TRUE
+        inspector:
+          editorOptions:
+            values:
+              '25-25-25-25':
+                label: '25% / 25% / 25% / 25%'

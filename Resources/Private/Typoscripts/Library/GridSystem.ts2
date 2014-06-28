@@ -29,3 +29,6 @@ prototype(JohannesSteu.Bootstrap.GridSystem:TwoColumn) < prototype(JohannesSteu.
 
 prototype(JohannesSteu.Bootstrap.GridSystem:ThreeColumn) >
 prototype(JohannesSteu.Bootstrap.GridSystem:ThreeColumn) < prototype(JohannesSteu.Bootstrap.GridSystem:GridRow)
+
+prototype(JohannesSteu.Bootstrap.GridSystem:FourColumn) >
+prototype(JohannesSteu.Bootstrap.GridSystem:FourColumn) < prototype(JohannesSteu.Bootstrap.GridSystem:GridRow)
