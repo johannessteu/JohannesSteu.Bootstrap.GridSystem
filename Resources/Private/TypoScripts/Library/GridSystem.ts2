@@ -1,0 +1,34 @@
+# Basic implementation of a flexible GridRow-Element for grids. Other NodeTypes will inerhited this
+prototype(JohannesSteu.Bootstrap.GridSystem:GridRow) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/GridRow.html'
+
+	columns = TYPO3.TypoScript:Collection {
+		collection = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]')}
+		itemRenderer = JohannesSteu.Bootstrap.GridSystem:GridColumn
+		itemName = 'node'
+		iterationName = 'iteration'
+	}
+}
+
+# Basic implementation for a single column inside a row
+prototype(JohannesSteu.Bootstrap.GridSystem:GridColumn) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/GridColumn.html'
+
+	node = ${node}
+	layout = ${q(node).parent().property('layout')}
+	iteration = ${iteration.cycle}
+	cntColumns = ${q(node).parent().property('cntColumns')}
+
+	columnContent = TYPO3.Neos:ContentCollection {
+		nodePath = '.'
+	}
+}
+
+prototype(JohannesSteu.Bootstrap.GridSystem:TwoColumn) >
+prototype(JohannesSteu.Bootstrap.GridSystem:TwoColumn) < prototype(JohannesSteu.Bootstrap.GridSystem:GridRow)
+
+prototype(JohannesSteu.Bootstrap.GridSystem:ThreeColumn) >
+prototype(JohannesSteu.Bootstrap.GridSystem:ThreeColumn) < prototype(JohannesSteu.Bootstrap.GridSystem:GridRow)
+
+prototype(JohannesSteu.Bootstrap.GridSystem:FourColumn) >
+prototype(JohannesSteu.Bootstrap.GridSystem:FourColumn) < prototype(JohannesSteu.Bootstrap.GridSystem:GridRow)
