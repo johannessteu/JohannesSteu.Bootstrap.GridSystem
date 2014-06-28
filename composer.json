@@ -1,0 +1,1 @@
+{"name":"johannessteu\/bootstrap-gridsystem","type":"typo3-flow-package","description":"Add description here","require":{"typo3\/flow":"*"},"autoload":{"psr-0":{"JohannesSteu\\Bootstrap\\GridSystem":"Classes"}}}
