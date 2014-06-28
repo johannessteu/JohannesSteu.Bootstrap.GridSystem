@@ -11,14 +11,14 @@ Those NodeTypes will provide a basic gridsystem based on Bootstrap (http://getbo
 
 Installation
 ------------
-Install via composer:
+Install via composer (current version is dev-master):
+```
+composer require johannessteu/bootstrap-gridsystem
 ```
 
-```
+or just copy this pacakge in YOUR_ROOT/Packages/JohannesSteu.Bootstrap.GridSystem
 
-or just copy this pacakge in YOUR_ROOT/Packages/JohannesSteu.Bootstrap.GridSystem 
-
-Afterwards include the GridSystem.ts2 in your main TypoScript 
+Afterwards include the GridSystem.ts2 in your main TypoScript
 ```
 include: resource://JohannesSteu.Bootstrap.GridSystem/Private/TypoScripts/Library/GridSystem.ts2
 ```
@@ -26,4 +26,9 @@ include: resource://JohannesSteu.Bootstrap.GridSystem/Private/TypoScripts/Librar
 
 Usage
 -----
-To use this plugin just create a new ContentElement inside your page and choose one of the new types. The Inspector-Pane will give you access to all diferent layouts.
+To use this plugin just create a new ContentElement inside your page and choose one of the new types. The Inspector-Pane will give you access to all different layouts.
+
+
+Planned Features
+----------------
+* Make Columns for each breakpoint more configurable
