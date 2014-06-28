@@ -1,3 +1,60 @@
 # This packages is based ob Bootstrab and provides NodeTypes for Bootstraps GridSystem.
 #
 # For furhter informations on Bootstrap check http://getbootstrap.com
+
+'JohannesSteu.Bootstrap.GridSystem:Row':
+  superTypes: ['TYPO3.Neos:Content']
+  abstract: TRUE
+  ui:
+    group: 'structure'
+    label: 'GridRow'
+    icon: 'icon-columns'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        column:
+          label: 'Bootstrap Gridsystem'
+          position: 10
+  properties:
+    layout:
+      type: string
+      ui:
+        label: 'Layout'
+        inspector:
+          group: 'column'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+
+
+'JohannesSteu.Bootstrap.GridSystem:TwoColumn':
+  superTypes: ['JohannesSteu.Bootstrap.GridSystem:Row']
+  ui:
+    label: 'Bootstrap 2 Column'
+  childNodes:
+    columnLeft:
+      type: 'TYPO3.Neos:ContentCollection'
+    columnRight:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    cntColumns:
+      defaultValue: 'Two'
+    layout:
+      defaultValue: '50-50'
+      ui:
+        reloadIfChanged: TRUE
+        inspector:
+          editorOptions:
+            values:
+              '50-50':
+                label: '50% / 50%'
+              '75-25':
+                label: '75% / 25%'
+              '25-75':
+                label: '25% / 75%'
+              '66-33':
+                label: '66% / 33%'
+              '33-66':
+                label: '33% / 66%'
+              '20-80':
+                label: '20% / 80%'
+              '80-20':
+                label: '80% / 20%'

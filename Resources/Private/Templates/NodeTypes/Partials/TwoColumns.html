@@ -1,0 +1,97 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+<f:if condition="{layout} == '50-50'">
+	<div class="col-xs-12 col-sm-6">
+		<ts:render path="columnContent"/>
+	</div>
+</f:if>
+
+<f:if condition="{layout} == '25-75'">
+	<f:if condition="{iteration} == 1">
+		<f:then>
+			<div class="col-xs-12 col-sm-3">
+				<ts:render path="columnContent"/>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="col-xs-12 col-sm-9">
+				<ts:render path="columnContent"/>
+			</div>
+		</f:else>
+	</f:if>
+</f:if>
+
+<f:if condition="{layout} == '75-25'">
+	<f:if condition="{iteration} == 1">
+		<f:then>
+			<div class="col-xs-12 col-sm-9">
+				<ts:render path="columnContent"/>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="col-xs-12 col-sm-3">
+				<ts:render path="columnContent"/>
+			</div>
+		</f:else>
+	</f:if>
+</f:if>
+
+<f:if condition="{layout} == '33-66'">
+	<f:if condition="{iteration} == 1">
+		<f:then>
+			<div class="col-xs-12 col-sm-4">
+				<ts:render path="columnContent"/>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="col-xs-12 col-sm-8">
+				<ts:render path="columnContent"/>
+			</div>
+		</f:else>
+	</f:if>
+</f:if>
+
+<f:if condition="{layout} == '66-33'">
+	<f:if condition="{iteration} == 1">
+		<f:then>
+			<div class="col-xs-12 col-sm-8">
+				<ts:render path="columnContent"/>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="col-xs-12 col-sm-4">
+				<ts:render path="columnContent"/>
+			</div>
+		</f:else>
+	</f:if>
+</f:if>
+
+<f:if condition="{layout} == '20-80'">
+	<f:if condition="{iteration} == 1">
+		<f:then>
+			<div class="col-xs-12 col-sm-2">
+				<ts:render path="columnContent"/>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="col-xs-12 col-sm-10">
+				<ts:render path="columnContent"/>
+			</div>
+		</f:else>
+	</f:if>
+</f:if>
+
+<f:if condition="{layout} == '80-20'">
+	<f:if condition="{iteration} == 1">
+		<f:then>
+			<div class="col-xs-12 col-sm-10">
+				<ts:render path="columnContent"/>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="col-xs-12 col-sm-2">
+				<ts:render path="columnContent"/>
+			</div>
+		</f:else>
+	</f:if>
+</f:if>

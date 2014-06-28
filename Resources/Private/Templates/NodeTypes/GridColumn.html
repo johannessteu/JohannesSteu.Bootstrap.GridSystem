@@ -1,0 +1,13 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+<f:if condition="{cntColumns}">
+	<f:then>
+		<f:render partial="{cntColumns}Columns.html" arguments="{layout:layout, iteration:iteration}"/>
+	</f:then>
+	<f:else>
+		<div class="col-xs-12">
+			<ts:render path="columnContent"/>
+		</div>
+
+	</f:else>
+</f:if>
