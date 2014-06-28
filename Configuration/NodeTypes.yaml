@@ -28,7 +28,7 @@
 'JohannesSteu.Bootstrap.GridSystem:TwoColumn':
   superTypes: ['JohannesSteu.Bootstrap.GridSystem:Row']
   ui:
-    label: 'Bootstrap 2 Column'
+    label: 'Bootstrap 2 Columns'
   childNodes:
     columnLeft:
       type: 'TYPO3.Neos:ContentCollection'
@@ -58,3 +58,29 @@
                 label: '20% / 80%'
               '80-20':
                 label: '80% / 20%'
+
+'JohannesSteu.Bootstrap.GridSystem:ThreeColumn':
+  superTypes: ['JohannesSteu.Bootstrap.GridSystem:Row']
+  ui:
+    label: 'Bootstrap 3 Columns'
+  childNodes:
+    columnLeft:
+      type: 'TYPO3.Neos:ContentCollection'
+    columnMiddle:
+      type: 'TYPO3.Neos:ContentCollection'
+    columnRight:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    cntColumns:
+      defaultValue: 'Three'
+    layout:
+      defaultValue: '33-33-33'
+      ui:
+        reloadIfChanged: TRUE
+        inspector:
+          editorOptions:
+            values:
+              '33-33-33':
+                label: '33% / 33% / 33%'
+              '25-50-25':
+                label: '25% / 50% / 25%'

@@ -1,0 +1,22 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+<f:if condition="{layout} == '33-33-33'">
+	<div class="col-xs-12 col-sm-4">
+		<ts:render path="columnContent"/>
+	</div>
+</f:if>
+
+<f:if condition="{layout} == '25-50-25'">
+	<f:if condition="{iteration} == 2">
+		<f:then>
+			<div class="col-xs-12 col-sm-6">
+				<ts:render path="columnContent"/>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="col-xs-12 col-sm-3">
+				<ts:render path="columnContent"/>
+			</div>
+		</f:else>
+	</f:if>
+</f:if>
