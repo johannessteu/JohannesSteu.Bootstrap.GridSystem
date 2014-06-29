@@ -1,1 +1,21 @@
-{"name":"johannessteu\/bootstrap-gridsystem","type":"typo3-flow-package","description":"Add description here","require":{"typo3\/flow":"*"},"autoload":{"psr-0":{"JohannesSteu\\Bootstrap\\GridSystem":"Classes"}}}
+{
+	"name": "johannessteu\/bootstrap-gridsystem",
+	"type":"typo3-flow-plugin",
+	"description": "Plugin for TYPO3.Neos to wrap bootstraps gridsystem",
+	"authors": [
+		{
+			"name": "Johannes Steu",
+			"email": "js@johannessteu.de",
+			"homepage": "http://johannessteu.de",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"typo3/flow":">=2.2.*",
+		"typo3/neos":">=1.1.*"
+	},
+	"autoload": {
+	"psr-0": {
+		"JohannesSteu\\Bootstrap\\GridSystem": "Classes"
+	}
+}}
