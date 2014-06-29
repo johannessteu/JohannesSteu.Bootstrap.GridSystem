@@ -2,6 +2,7 @@
 	"name": "johannessteu\/bootstrap-gridsystem",
 	"type":"typo3-flow-plugin",
 	"description": "Plugin for TYPO3.Neos to wrap bootstraps gridsystem",
+	"license": ["MIT"],
 	"authors": [
 		{
 			"name": "Johannes Steu",
@@ -11,8 +12,8 @@
 		}
 	],
 	"require": {
-		"typo3/flow":">=2.2.*",
-		"typo3/neos":">=1.1.*"
+		"typo3/flow":"~2.2",
+		"typo3/neos":"~1.1"
 	},
 	"autoload": {
 	"psr-0": {
