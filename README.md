@@ -27,7 +27,7 @@ In your Template you need to load the bootstrap css with
 ```
 <link rel="stylesheet" type="text/css" href="{f:uri.resource(package: 'TYPO3.Twitter.Bootstrap', path: '3.1/css/bootstrap.css')}" media="all">
 ```
-inside your <head>-Section.
+inside your head-Section.
 
 Usage
 -----
