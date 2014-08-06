@@ -16,13 +16,18 @@ Install via composer (current version is dev-master):
 composer require johannessteu/bootstrap-gridsystem
 ```
 
-or just copy this pacakge in YOUR_ROOT/Packages/JohannesSteu.Bootstrap.GridSystem
+or just copy this package in YOUR_ROOT/Packages/JohannesSteu.Bootstrap.GridSystem
 
-Afterwards include the GridSystem.ts2 in your main TypoScript
+Afterwards include the GridSystem.ts2 will be auto-inlcuded in your main TypoScript. Otherwise use
 ```
 include: resource://JohannesSteu.Bootstrap.GridSystem/Private/TypoScripts/Library/GridSystem.ts2
 ```
-
+in your Root.ts2.
+In your Template you need to load the bootstrap css with
+```
+<link rel="stylesheet" type="text/css" href="{f:uri.resource(package: 'TYPO3.Twitter.Bootstrap', path: '3.1/css/bootstrap.css')}" media="all">
+```
+inside your <head>-Section.
 
 Usage
 -----
