@@ -35,8 +35,6 @@
     columnRight:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
-    cntColumns:
-      defaultValue: 'Two'
     layout:
       defaultValue: '50-50'
       ui:
@@ -71,8 +69,6 @@
     columnRight:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
-    cntColumns:
-      defaultValue: 'Three'
     layout:
       defaultValue: '33-33-33'
       ui:
@@ -99,8 +95,6 @@
     column4:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
-    cntColumns:
-      defaultValue: 'Four'
     layout:
       defaultValue: '25-25-25-25'
       ui:

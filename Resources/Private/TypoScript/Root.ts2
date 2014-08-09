@@ -17,7 +17,6 @@ prototype(JohannesSteu.Bootstrap.GridSystem:GridColumn) < prototype(TYPO3.TypoSc
 	node = ${node}
 	layout = ${q(node).parent().property('layout')}
 	iteration = ${iteration.cycle}
-	cntColumns = ${q(node).parent().property('cntColumns')}
 
 	columnContent = TYPO3.Neos:ContentCollection {
 		nodePath = '.'

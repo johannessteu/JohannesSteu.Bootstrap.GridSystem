@@ -34,6 +34,22 @@ Usage
 To use this plugin just create a new ContentElement inside your page and choose one of the new types. The Inspector-Pane will give you access to all different layouts.
 
 
+Breakpoints
+-----------
+You can configure all breakpoints for all columns. If you are not familiar which classes are used to configure the breakpoints check this out: http://getbootstrap.com/css/#grid .
+To Override the default breakpoints all you have to do is to override the settings in your Site's in Settings.yaml.
+
+If you would like to break the 50-50 layout also at size xs in a 50-50 layout you have to add this in Packages/Sites/YourVendor.SiteKey/Configuration/Settings.yaml
+```
+JohannesSteu:
+  Bootstrap:
+    GridSystem:
+      Layouts:
+        '50-50':
+          'col-1': 'col-xs-6'
+          'col-2': 'col-xs-6'
+```
+
 Planned Features
 ----------------
-* Make Columns for each breakpoint more configurable
+* Nothing more planned right now. Feel free to request new features!

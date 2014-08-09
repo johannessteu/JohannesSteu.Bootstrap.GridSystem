@@ -3,3 +3,41 @@ TYPO3:
     typoScript:
       autoInclude:
         'JohannesSteu.Bootstrap.GridSystem': TRUE
+JohannesSteu:
+  Bootstrap:
+    GridSystem:
+      Layouts:
+        '50-50':
+          'col-1': 'col-xs-12 col-sm-6'
+          'col-2': 'col-xs-12 col-sm-6'
+        '75-25':
+          'col-1': 'col-xs-12 col-sm-3'
+          'col-2': 'col-xs-12 col-sm-9'
+        '25-75':
+          'col-1': 'col-xs-12 col-sm-9'
+          'col-2': 'col-xs-12 col-sm-3'
+        '66-33':
+          'col-1': 'col-xs-12 col-sm-8'
+          'col-2': 'col-xs-12 col-sm-4'
+        '33-66':
+          'col-1': 'col-xs-12 col-sm-4'
+          'col-2': 'col-xs-12 col-sm-8'
+        '20-80':
+          'col-1': 'col-xs-12 col-sm-2'
+          'col-2': 'col-xs-12 col-sm-10'
+        '80-20':
+          'col-1': 'col-xs-12 col-sm-10'
+          'col-2': 'col-xs-12 col-sm-2'
+        '33-33-33':
+          'col-1': 'col-xs-12 col-sm-4'
+          'col-2': 'col-xs-12 col-sm-4'
+          'col-3': 'col-xs-12 col-sm-4'
+        '25-50-25':
+          'col-1': 'col-xs-12 col-sm-3'
+          'col-2': 'col-xs-12 col-sm-6'
+          'col-3': 'col-xs-12 col-sm-3'
+        '25-25-25-25':
+          'col-1': 'col-xs-12 col-sm-3'
+          'col-2': 'col-xs-12 col-sm-3'
+          'col-3': 'col-xs-12 col-sm-3'
+          'col-4': 'col-xs-12 col-sm-3'
