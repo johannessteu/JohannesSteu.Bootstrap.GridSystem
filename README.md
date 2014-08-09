@@ -37,9 +37,9 @@ To use this plugin just create a new ContentElement inside your page and choose 
 Breakpoints
 -----------
 You can configure all breakpoints for all columns. If you are not familiar which classes are used to configure the breakpoints check this out: http://getbootstrap.com/css/#grid .
-To Override the default breakpoints all you have to do is to override the settings in your Site's in Settings.yaml.
+To Override the default breakpoints all you have to do is to override the settings in your Site's Settings.yaml.
 
-If you would like to break the 50-50 layout also at size xs in a 50-50 layout you have to add this in Packages/Sites/YourVendor.SiteKey/Configuration/Settings.yaml
+If you e.g. would like to break the 50-50 layout also at size xs in a 50-50 layout you have to add this in Packages/Sites/YourVendor.SiteKey/Configuration/Settings.yaml
 ```
 JohannesSteu:
   Bootstrap:
