@@ -15,10 +15,9 @@ Install via composer (current version is dev-master):
 ```
 composer require johannessteu/bootstrap-gridsystem
 ```
+or just copy this package in YOUR_ROOT/Plugins/JohannesSteu.Bootstrap.GridSystem
 
-or just copy this package in YOUR_ROOT/Packages/JohannesSteu.Bootstrap.GridSystem
-
-Afterwards include the GridSystem.ts2 will be auto-inlcuded in your main TypoScript. Otherwise use
+Afterwards the GridSystem.ts2 will be auto-inlcuded in your main TypoScript. Otherwise use
 ```
 include: resource://JohannesSteu.Bootstrap.GridSystem/Private/TypoScripts/Library/GridSystem.ts2
 ```
@@ -37,7 +36,7 @@ To use this plugin just create a new ContentElement inside your page and choose 
 Breakpoints
 -----------
 You can configure all breakpoints for all columns. If you are not familiar which classes are used to configure the breakpoints check this out: http://getbootstrap.com/css/#grid .
-To Override the default breakpoints all you have to do is to override the settings in your Site's Settings.yaml.
+To Override the default breakpoints all you have to do is to override the settings in your Site's Settings.yaml. Make sure that this package is not required after your Sites package. Best practice would be to rquire this plugin inside your Sites composer.json
 
 If you e.g. would like to break the 50-50 layout also at size xs in a 50-50 layout you have to add this in Packages/Sites/YourVendor.SiteKey/Configuration/Settings.yaml
 ```
