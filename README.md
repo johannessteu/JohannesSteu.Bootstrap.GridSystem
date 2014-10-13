@@ -51,4 +51,5 @@ JohannesSteu:
 
 Planned Features
 ----------------
-* Nothing more planned right now. Feel free to request new features!
+* Add offset-options
+* make grids configurable in the inspector
