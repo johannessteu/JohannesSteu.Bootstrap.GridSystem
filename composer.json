@@ -12,8 +12,7 @@
 		}
 	],
 	"require": {
-		"typo3/flow":"~2",
-		"typo3/neos":"~1"
+		"typo3/neos":"*"
 	},
 	"autoload": {
 	"psr-0": {
