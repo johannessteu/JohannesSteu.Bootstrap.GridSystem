@@ -3,6 +3,12 @@ TYPO3:
     typoScript:
       autoInclude:
         'JohannesSteu.Bootstrap.GridSystem': TRUE
+    nodeTypes:
+      groups:
+        grid:
+          position: '150'
+          label: 'Bootstrap Grids'
+
 JohannesSteu:
   Bootstrap:
     GridSystem:

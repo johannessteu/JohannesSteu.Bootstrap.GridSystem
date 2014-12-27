@@ -6,29 +6,38 @@
   superTypes: ['TYPO3.Neos:Content']
   abstract: TRUE
   ui:
-    group: 'structure'
+    group: 'grid'
     label: 'GridRow'
     icon: 'icon-columns'
     inlineEditable: TRUE
     inspector:
+      tabs:
+        grid:
+          label: 'Gridlayout'
+          icon: 'icon-columns'
       groups:
-        column:
-          label: 'Bootstrap Gridsystem'
-          position: 10
+        gridsystem:
+          label: 'Bootstrap Grids'
+          tab: 'grid'
   properties:
     layout:
       type: string
       ui:
-        label: 'Layout'
+        label: 'Predefined layout'
         inspector:
-          group: 'column'
+          group: 'gridsystem'
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
-
+    classes:
+      type: string
+      ui:
+        label: 'Custom classes'
+        inspector:
+          group: 'gridsystem'
 
 'JohannesSteu.Bootstrap.GridSystem:TwoColumn':
   superTypes: ['JohannesSteu.Bootstrap.GridSystem:Row']
   ui:
-    label: 'Bootstrap 2 Columns'
+    label: '2 Columns predefined'
   childNodes:
     columnLeft:
       type: 'TYPO3.Neos:ContentCollection'
@@ -60,7 +69,7 @@
 'JohannesSteu.Bootstrap.GridSystem:ThreeColumn':
   superTypes: ['JohannesSteu.Bootstrap.GridSystem:Row']
   ui:
-    label: 'Bootstrap 3 Columns'
+    label: '3 Columns predefined'
   childNodes:
     columnLeft:
       type: 'TYPO3.Neos:ContentCollection'
@@ -84,7 +93,7 @@
 'JohannesSteu.Bootstrap.GridSystem:FourColumn':
   superTypes: ['JohannesSteu.Bootstrap.GridSystem:Row']
   ui:
-    label: 'Bootstrap 4 Columns'
+    label: '4 Columns predefined'
   childNodes:
     column1:
       type: 'TYPO3.Neos:ContentCollection'

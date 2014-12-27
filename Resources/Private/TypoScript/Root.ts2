@@ -2,6 +2,8 @@
 prototype(JohannesSteu.Bootstrap.GridSystem:GridRow) < prototype(TYPO3.Neos:Content) {
 	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/GridRow.html'
 
+	additionalClasses = ${q(node).property('classes')}
+
 	columns = TYPO3.TypoScript:Collection {
 		collection = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]')}
 		itemRenderer = JohannesSteu.Bootstrap.GridSystem:GridColumn
