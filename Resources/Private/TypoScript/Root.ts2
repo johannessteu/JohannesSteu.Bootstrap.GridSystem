@@ -1,4 +1,16 @@
-# Basic implementation of a flexible GridRow-Element for grids. Other NodeTypes will inerhited this
+prototype(JohannesSteu.Bootstrap.GridSystem:Container) >
+prototype(JohannesSteu.Bootstrap.GridSystem:Container) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/Container.html'
+
+	attributes.class.@process.nodeType >
+	attributes.class = ${q(node).property('layout') + " " + q(node).property('classes')}
+
+	content = TYPO3.Neos:ContentCollection {
+		nodePath = ${q(node).children('containerContent').property('_path')}
+		collection = ${q(node).children('containerContent').children()}
+	}
+}
+
 prototype(JohannesSteu.Bootstrap.GridSystem:GridRow) < prototype(TYPO3.Neos:Content) {
 	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/GridRow.html'
 
@@ -12,7 +24,6 @@ prototype(JohannesSteu.Bootstrap.GridSystem:GridRow) < prototype(TYPO3.Neos:Cont
 	}
 }
 
-# Basic implementation for a single column inside a row
 prototype(JohannesSteu.Bootstrap.GridSystem:GridColumn) < prototype(TYPO3.TypoScript:Template) {
 	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/GridColumn.html'
 
@@ -33,3 +44,52 @@ prototype(JohannesSteu.Bootstrap.GridSystem:ThreeColumn) < prototype(JohannesSte
 
 prototype(JohannesSteu.Bootstrap.GridSystem:FourColumn) >
 prototype(JohannesSteu.Bootstrap.GridSystem:FourColumn) < prototype(JohannesSteu.Bootstrap.GridSystem:GridRow)
+
+prototype(JohannesSteu.Bootstrap.GridSystem:CustomRow) >
+prototype(JohannesSteu.Bootstrap.GridSystem:CustomRow) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/CustomRow.html'
+
+	attributes.class.@process.nodeType >
+	attributes.class = ${'row ' + q(node).property('classes')}
+
+	columns = TYPO3.TypoScript:Collection {
+		nodePath = ${q(node).children('columns').property('_path')}
+		collection = ${q(node).children('columns').children('[instanceof JohannesSteu.Bootstrap.GridSystem:CustomColumn]')}
+		itemName = 'node'
+		itemRenderer = JohannesSteu.Bootstrap.GridSystem:CustomColumn
+	}
+}
+
+prototype(JohannesSteu.Bootstrap.GridSystem:CustomColumn) >
+prototype(JohannesSteu.Bootstrap.GridSystem:CustomColumn) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/CustomColumn.html'
+
+	classes = TYPO3.TypoScript:Array {
+		sizeXS = ${q(node).property('sizeXS') ? (q(node).property('sizeXS')) : ''}
+		sizeSM = ${q(node).property('sizeSM') ? (' ' + q(node).property('sizeSM')) : ''}
+		sizeMD = ${q(node).property('sizeMD') ? (' ' + q(node).property('sizeMD')) : ''}
+		sizeLG = ${q(node).property('sizeLG') ? (' ' + q(node).property('sizeLG')) : ''}
+
+		visible = ${q(node).property('visible') != NULL ? ' ' + Array.join(q(node).property('visible'), ' ') : ''}
+		hidden  = ${q(node).property('hidden')  != NULL ? ' ' + Array.join(q(node).property('hidden'),  ' ') : ''}
+
+		offsetXS = ${q(node).property('offsetXS') ? (' ' + q(node).property('offsetXS')) : ''}
+		offsetSM = ${q(node).property('offsetSM') ? (' ' + q(node).property('offsetSM')) : ''}
+		offsetMD = ${q(node).property('offsetMD') ? (' ' + q(node).property('offsetMD')) : ''}
+		offsetLG = ${q(node).property('offsetLG') ? (' ' + q(node).property('offsetLG')) : ''}
+
+		pullXS = ${q(node).property('pullXS') ? (' ' + q(node).property('pullXS')) : ''}
+		pullSM = ${q(node).property('pullSM') ? (' ' + q(node).property('pullSM')) : ''}
+		pullMD = ${q(node).property('pullMD') ? (' ' + q(node).property('pullMD')) : ''}
+		pullLG = ${q(node).property('pullLG') ? (' ' + q(node).property('pullLG')) : ''}
+
+		pushXS = ${q(node).property('pushXS') ? (' ' + q(node).property('pushXS')) : ''}
+		pushSM = ${q(node).property('pushSM') ? (' ' + q(node).property('pushSM')) : ''}
+		pushMD = ${q(node).property('pushMD') ? (' ' + q(node).property('pushMD')) : ''}
+		pushLG = ${q(node).property('pushLG') ? (' ' + q(node).property('pullLG')) : ''}
+	}
+
+	columnContent = TYPO3.Neos:ContentCollection {
+		nodePath = ${q(node).children('column').property('_path')}
+	}
+}
