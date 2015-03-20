@@ -70,8 +70,8 @@ prototype(JohannesSteu.Bootstrap.GridSystem:CustomColumn) < prototype(TYPO3.Neos
 		sizeMD = ${q(node).property('sizeMD') ? (' ' + q(node).property('sizeMD')) : ''}
 		sizeLG = ${q(node).property('sizeLG') ? (' ' + q(node).property('sizeLG')) : ''}
 
-		visible = ${q(node).property('visible') != NULL ? ' ' + Array.join(q(node).property('visible'), ' ') : ''}
-		hidden  = ${q(node).property('hidden')  != NULL ? ' ' + Array.join(q(node).property('hidden'),  ' ') : ''}
+		visible = ${q(node).property('visible') != '' ? ' ' + Array.join(q(node).property('visible'), ' ') : ''}
+		hidden  = ${q(node).property('hidden')  != '' ? ' ' + Array.join(q(node).property('hidden'),  ' ') : ''}
 
 		offsetXS = ${q(node).property('offsetXS') ? (' ' + q(node).property('offsetXS')) : ''}
 		offsetSM = ${q(node).property('offsetSM') ? (' ' + q(node).property('offsetSM')) : ''}
