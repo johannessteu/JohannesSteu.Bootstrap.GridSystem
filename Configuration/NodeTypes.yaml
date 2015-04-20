@@ -29,7 +29,7 @@
           label: 'Container-Layout'
           position: 5
   childNodes:
-    containerContent:
+    containercontent:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
     layout:
@@ -86,9 +86,9 @@
   ui:
     label: '2 Columns predefined'
   childNodes:
-    columnLeft:
+    columnleft:
       type: 'TYPO3.Neos:ContentCollection'
-    columnRight:
+    columnright:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
     layout:
@@ -118,11 +118,11 @@
   ui:
     label: '3 Columns predefined'
   childNodes:
-    columnLeft:
+    columnleft:
       type: 'TYPO3.Neos:ContentCollection'
-    columnMiddle:
+    columnmiddle:
       type: 'TYPO3.Neos:ContentCollection'
-    columnRight:
+    columnright:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
     layout:
