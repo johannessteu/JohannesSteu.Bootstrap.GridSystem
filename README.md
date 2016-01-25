@@ -25,9 +25,9 @@ composer require johannessteu/bootstrap-gridsystem
 ```
 or just copy this package in YOUR_ROOT/Plugins/JohannesSteu.Bootstrap.GridSystem
 
-Afterwards the GridSystem.ts2 will be auto-inlcuded in your main TypoScript. Otherwise use
+Afterwards the Root.ts2 will be auto-inlcuded in your main TypoScript. Otherwise use
 ```
-include: resource://JohannesSteu.Bootstrap.GridSystem/Private/TypoScripts/Root.ts2
+include: resource://JohannesSteu.Bootstrap.GridSystem/Private/TypoScript/Root.ts2
 ```
 in your Root.ts2.
 Inside your Template you need to load the bootstrap css. You can do so with
