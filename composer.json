@@ -1,21 +1,25 @@
 {
-	"name": "johannessteu\/bootstrap-gridsystem",
-	"type":"typo3-flow-plugin",
-	"description": "Plugin for TYPO3.Neos to wrap bootstraps gridsystem",
-	"license": ["MIT"],
-	"authors": [
-		{
-			"name": "Johannes Steu",
-			"email": "js@johannessteu.de",
-			"homepage": "http://johannessteu.de",
-			"role": "Developer"
-		}
-	],
-	"require": {
-		"typo3/neos":"2.*"
-	},
-	"autoload": {
-	"psr-0": {
-		"JohannesSteu\\Bootstrap\\GridSystem": "Classes"
-	}
-}}
+  "name": "johannessteu\/bootstrap-gridsystem",
+  "type": "typo3-flow-plugin",
+  "description": "Plugin for TYPO3.Neos to wrap bootstraps gridsystem",
+  "license": "GPL-3.0+",
+  "authors": [
+    {
+      "name": "Johannes Steu",
+      "email": "js@johannessteu.de",
+      "homepage": "http://johannessteu.de",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "typo3/neos": "2.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "JohannesSteu\\Bootstrap\\GridSystem": "Classes"
+    }
+  },
+  "extra": {
+    "marketplace-account": "hello@johannessteu.de"
+  }
+}
