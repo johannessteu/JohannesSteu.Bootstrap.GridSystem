@@ -18,31 +18,36 @@ use TYPO3\Flow\Configuration\ConfigurationManager;
  *
  *
  */
-class GridLayoutViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
+class GridLayoutViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper
+{
 
-	/**
-	 * @Flow\Inject
-	 * @var ConfigurationManager
-	 */
-	protected $configurationManager;
+    /**
+     * @Flow\Inject
+     * @var ConfigurationManager
+     */
+    protected $configurationManager;
 
-	/**
-	 * Renders an HTML tag from a given asset.
-	 *
-	 * @param string $layout
-	 * @param int $columnNo
-	 * @return string
-	 */
-	public function render($layout, $columnNo = 1) {
-		$settings = $this->configurationManager->getConfiguration(ConfigurationManager::CONFIGURATION_TYPE_SETTINGS, 'JohannesSteu.Bootstrap.GridSystem.Layouts');
+    /**
+     * Renders an HTML tag from a given asset.
+     *
+     * @param array $layout
+     * @param int $columnNo
+     * @return string
+     */
+    public function render($layout, $columnNo = 1)
+    {
+        $layoutSettings = $this->configurationManager->getConfiguration(ConfigurationManager::CONFIGURATION_TYPE_SETTINGS, 'JohannesSteu.Bootstrap.GridSystem.Layouts');
+        $breakpointClasses = $this->configurationManager->getConfiguration(ConfigurationManager::CONFIGURATION_TYPE_SETTINGS, 'JohannesSteu.Bootstrap.GridSystem.breakpointClassNames');
 
-		if(array_key_exists($layout, $settings)){
-			if(array_key_exists("col-".$columnNo, $settings[$layout])){
-				return $settings[$layout]["col-".$columnNo];
-			}
-		}
+        $class = "";
+        foreach ($layout as $breakpoint => $setting) {
+            if (array_key_exists($setting, $layoutSettings)) {
+                if(array_key_exists("col-".$columnNo, $layoutSettings[$setting])) {
+                    $class .= " " . $breakpointClasses[$breakpoint].$layoutSettings[$setting]["col-".$columnNo];
+                }
+            }
+        }
 
-		return "";
-	}
-
+        return $class;
+    }
 }

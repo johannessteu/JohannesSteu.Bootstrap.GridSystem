@@ -7,14 +7,9 @@
   abstract: TRUE
   ui:
     inspector:
-      tabs:
-        gridtab:
-          label: 'Gridlayout'
-          icon: 'icon-columns'
       groups:
         gridsystem:
           label: 'Bootstrap Grids'
-          tab: 'gridtab'
 
 'JohannesSteu.Bootstrap.GridSystem:Container':
   superTypes: ['TYPO3.Neos:Content']
@@ -66,14 +61,11 @@
     label: 'GridRow'
     icon: 'icon-columns'
     inlineEditable: TRUE
+    inspector:
+      groups:
+        gridsystem:
+          label: 'Bootstrap Grids'
   properties:
-    layout:
-      type: string
-      ui:
-        label: 'Predefined layout'
-        inspector:
-          group: 'gridsystem'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
     classes:
       type: string
       ui:
@@ -92,12 +84,18 @@
       type: 'TYPO3.Neos:ContentCollection'
   properties:
     layout:
-      defaultValue: '50-50'
+      defaultValue: 'none'
+      type: string
       ui:
+        label: 'Layout LG'
         reloadIfChanged: TRUE
         inspector:
+          group: 'gridsystem'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
+              'none':
+                label: 'No specific'
               '50-50':
                 label: '50% / 50%'
               '75-25':
@@ -112,6 +110,95 @@
                 label: '20% / 80%'
               '80-20':
                 label: '80% / 20%'
+              '100-100':
+                label: '100% / 100%'
+    'layoutMd':
+      defaultValue: 'none'
+      type: string
+      ui:
+        label: 'Layout MD'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'gridsystem'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'none':
+                label: 'No specific'
+              '50-50':
+                label: '50% / 50%'
+              '75-25':
+                label: '75% / 25%'
+              '25-75':
+                label: '25% / 75%'
+              '66-33':
+                label: '66% / 33%'
+              '33-66':
+                label: '33% / 66%'
+              '20-80':
+                label: '20% / 80%'
+              '80-20':
+                label: '80% / 20%'
+              '100-100':
+                label: '100% / 100%'
+    layoutSm:
+      defaultValue: '50-50'
+      type: string
+      ui:
+        label: 'Layout SM'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'gridsystem'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'none':
+                label: 'No specific'
+              '50-50':
+                label: '50% / 50%'
+              '75-25':
+                label: '75% / 25%'
+              '25-75':
+                label: '25% / 75%'
+              '66-33':
+                label: '66% / 33%'
+              '33-66':
+                label: '33% / 66%'
+              '20-80':
+                label: '20% / 80%'
+              '80-20':
+                label: '80% / 20%'
+              '100-100':
+                label: '100% / 100%'
+    layoutXs:
+      defaultValue: '100-100'
+      type: string
+      ui:
+        label: 'Layout XS'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'gridsystem'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'none':
+                label: 'No specific'
+              '50-50':
+                label: '50% / 50%'
+              '75-25':
+                label: '75% / 25%'
+              '25-75':
+                label: '25% / 75%'
+              '66-33':
+                label: '66% / 33%'
+              '33-66':
+                label: '33% / 66%'
+              '20-80':
+                label: '20% / 80%'
+              '80-20':
+                label: '80% / 20%'
+              '100-100':
+                label: '100% / 100%'
 
 'JohannesSteu.Bootstrap.GridSystem:ThreeColumn':
   superTypes: ['JohannesSteu.Bootstrap.GridSystem:Row']
@@ -128,14 +215,75 @@
     layout:
       defaultValue: '33-33-33'
       ui:
+        label: 'Layout LG'
         reloadIfChanged: TRUE
         inspector:
+          group: 'gridsystem'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
+              'none':
+                label: 'No specific'
               '33-33-33':
                 label: '33% / 33% / 33%'
               '25-50-25':
                 label: '25% / 50% / 25%'
+              '100-100-100':
+                label: '100% / 100% / 100%'
+    layoutMd:
+      defaultValue: 'none'
+      ui:
+        label: 'Layout MD'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'gridsystem'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'none':
+                label: 'No specific'
+              '33-33-33':
+                label: '33% / 33% / 33%'
+              '25-50-25':
+                label: '25% / 50% / 25%'
+              '100-100-100':
+                label: '100% / 100% / 100%'
+    layoutSm:
+      defaultValue: 'none'
+      ui:
+        label: 'Layout SM'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'gridsystem'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'none':
+                label: 'No specific'
+              '33-33-33':
+                label: '33% / 33% / 33%'
+              '25-50-25':
+                label: '25% / 50% / 25%'
+              '100-100-100':
+                label: '100% / 100% / 100%'
+    layoutXs:
+      defaultValue: '100-100-100'
+      ui:
+        label: 'Layout XS'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'gridsystem'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'none':
+                label: 'No specific'
+              '33-33-33':
+                label: '33% / 33% / 33%'
+              '25-50-25':
+                label: '25% / 50% / 25%'
+              '100-100-100':
+                label: '100% / 100% / 100%'
 
 'JohannesSteu.Bootstrap.GridSystem:FourColumn':
   superTypes: ['JohannesSteu.Bootstrap.GridSystem:Row']
@@ -152,14 +300,77 @@
       type: 'TYPO3.Neos:ContentCollection'
   properties:
     layout:
-      defaultValue: '25-25-25-25'
+      defaultValue: 'none'
       ui:
+        label: 'Layout LG'
         reloadIfChanged: TRUE
         inspector:
+          group: 'gridsystem'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
+              'none':
+                label: 'No specific'
               '25-25-25-25':
                 label: '25% / 25% / 25% / 25%'
+              '50-50-50-50':
+                label: '50% / 50% / 50% / 50%'
+              '100-100-100-100':
+                label: '100% / 100% / 100% / 100%'
+    layoutMd:
+      defaultValue: '25-25-25-25'
+      ui:
+        label: 'Layout MD'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'gridsystem'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'none':
+                label: 'No specific'
+              '25-25-25-25':
+                label: '25% / 25% / 25% / 25%'
+              '50-50-50-50':
+                label: '50% / 50% / 50% / 50%'
+              '100-100-100-100':
+                label: '100% / 100% / 100% / 100%'
+    layoutSm:
+      defaultValue: '50-50-50-50'
+      ui:
+        label: 'Layout LG'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'gridsystem'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'none':
+                label: 'No specific'
+              '25-25-25-25':
+                label: '25% / 25% / 25% / 25%'
+              '50-50-50-50':
+                label: '50% / 50% / 50% / 50%'
+              '100-100-100-100':
+                label: '100% / 100% / 100% / 100%'
+    layoutXs:
+      defaultValue: '100-100-100-100'
+      ui:
+        label: 'Layout LG'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'gridsystem'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'none':
+                label: 'No specific'
+              '25-25-25-25':
+                label: '25% / 25% / 25% / 25%'
+              '50-50-50-50':
+                label: '50% / 50% / 50% / 50%'
+              '100-100-100-100':
+                label: '100% / 100% / 100% / 100%'
 
 'JohannesSteu.Bootstrap.GridSystem:CustomRow':
   superTypes: ['JohannesSteu.Bootstrap.GridSystem:GridTab']

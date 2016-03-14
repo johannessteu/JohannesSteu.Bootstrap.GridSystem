@@ -1,15 +1,6 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 {namespace js=JohannesSteu\Bootstrap\GridSystem\ViewHelpers}
 
-<f:if condition="{iteration} > 0">
-	<f:then>
-		<div class="{js:gridLayout(layout: '{layout}', columnNo:'{iteration}')}">
-			<ts:render path="columnContent"/>
-		</div>
-	</f:then>
-	<f:else>
-		<div class="col-xs-12">
-			<ts:render path="columnContent"/>
-		</div>
-	</f:else>
-</f:if>
+<div class="{colClass} {js:gridLayout(layout: '{layout}', columnNo:'{iteration}')}">
+	<ts:render path="columnContent"/>
+</div>

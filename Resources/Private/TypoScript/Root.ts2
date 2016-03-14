@@ -14,6 +14,7 @@ prototype(JohannesSteu.Bootstrap.GridSystem:Container) < prototype(TYPO3.Neos:Co
 prototype(JohannesSteu.Bootstrap.GridSystem:GridRow) < prototype(TYPO3.Neos:Content) {
 	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/GridRow.html'
 
+	rowClass = ${Configuration.Setting('JohannesSteu.Bootstrap.GridSystem.rowClassName')}
 	additionalClasses = ${q(node).property('classes')}
 
 	columns = TYPO3.TypoScript:Collection {
@@ -28,7 +29,15 @@ prototype(JohannesSteu.Bootstrap.GridSystem:GridColumn) < prototype(TYPO3.TypoSc
 	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/GridColumn.html'
 
 	node = ${node}
-	layout = ${q(node).parent().property('layout')}
+	colClass = ${Configuration.Setting('JohannesSteu.Bootstrap.GridSystem.collClassName')}
+
+	layout = TYPO3.TypoScript:RawArray {
+		lg = ${q(node).parent().property('layout')}
+		md = ${q(node).parent().property('layoutMd')}
+		sm = ${q(node).parent().property('layoutSm')}
+		xs = ${q(node).parent().property('layoutXs')}
+	}
+
 	iteration = ${iteration.cycle}
 
 	columnContent = TYPO3.Neos:ContentCollection {
