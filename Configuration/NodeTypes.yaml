@@ -1,23 +1,26 @@
-# This packages is based ob Bootstrap and provides NodeTypes for Bootstraps GridSystem.
-#
-# For furhter informations on Bootstrap check http://getbootstrap.com
+'TYPO3.Neos:ContentCollection':
+  constraints:
+    nodeTypes:
+      'JohannesSteu.Bootstrap.GridSystem:CustomColumn': FALSE
 
 'JohannesSteu.Bootstrap.GridSystem:GridTab':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
   abstract: TRUE
   ui:
     inspector:
       tabs:
         gridtab:
-          label: 'Gridlayout'
+          label: 'Grid settings'
           icon: 'icon-columns'
       groups:
         gridsystem:
-          label: 'Bootstrap Grids'
           tab: 'gridtab'
+          label: 'Layout'
 
 'JohannesSteu.Bootstrap.GridSystem:Container':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
   ui:
     group: 'grid'
     label: 'Container'
@@ -59,7 +62,8 @@
             placeholder: 'myClass anotherClass'
 
 'JohannesSteu.Bootstrap.GridSystem:Row':
-  superTypes: ['JohannesSteu.Bootstrap.GridSystem:GridTab']
+  superTypes:
+    'JohannesSteu.Bootstrap.GridSystem:GridTab': TRUE
   abstract: TRUE
   ui:
     group: 'grid'
@@ -70,7 +74,7 @@
     layout:
       type: string
       ui:
-        label: 'Predefined layout'
+        label: 'Predefined'
         inspector:
           group: 'gridsystem'
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
@@ -82,9 +86,10 @@
           group: 'gridsystem'
 
 'JohannesSteu.Bootstrap.GridSystem:TwoColumn':
-  superTypes: ['JohannesSteu.Bootstrap.GridSystem:Row']
+  superTypes:
+    'JohannesSteu.Bootstrap.GridSystem:Row': TRUE
   ui:
-    label: '2 Columns predefined'
+    label: 'Two Columns'
   childNodes:
     columnleft:
       type: 'TYPO3.Neos:ContentCollection'
@@ -114,9 +119,10 @@
                 label: '80% / 20%'
 
 'JohannesSteu.Bootstrap.GridSystem:ThreeColumn':
-  superTypes: ['JohannesSteu.Bootstrap.GridSystem:Row']
+  superTypes:
+    'JohannesSteu.Bootstrap.GridSystem:Row': TRUE
   ui:
-    label: '3 Columns predefined'
+    label: 'Three Columns'
   childNodes:
     columnleft:
       type: 'TYPO3.Neos:ContentCollection'
@@ -138,9 +144,10 @@
                 label: '25% / 50% / 25%'
 
 'JohannesSteu.Bootstrap.GridSystem:FourColumn':
-  superTypes: ['JohannesSteu.Bootstrap.GridSystem:Row']
+  superTypes:
+    'JohannesSteu.Bootstrap.GridSystem:Row': TRUE
   ui:
-    label: '4 Columns predefined'
+    label: 'Four Columns'
   childNodes:
     column1:
       type: 'TYPO3.Neos:ContentCollection'
@@ -162,15 +169,20 @@
                 label: '25% / 25% / 25% / 25%'
 
 'JohannesSteu.Bootstrap.GridSystem:CustomRow':
-  superTypes: ['JohannesSteu.Bootstrap.GridSystem:GridTab']
+  superTypes:
+    'JohannesSteu.Bootstrap.GridSystem:Row': TRUE
   ui:
     group: 'grid'
-    label: 'Custom row'
+    label: 'Row'
     icon: 'icon-columns'
     inlineEditable: TRUE
   childNodes:
     columns:
       type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'JohannesSteu.Bootstrap.GridSystem:CustomColumn': TRUE
   properties:
     classes:
       type: string
@@ -182,9 +194,10 @@
             placeholder: 'myClass anotherClass'
 
 'JohannesSteu.Bootstrap.GridSystem:CustomColumn':
-  superTypes: ['JohannesSteu.Bootstrap.GridSystem:GridTab']
+  superTypes:
+    'JohannesSteu.Bootstrap.GridSystem:GridTab': TRUE
   ui:
-    label: 'Custom Gridcolumn'
+    label: 'Column'
     group: 'grid'
     icon: 'icon-columns'
     inlineEditable: TRUE

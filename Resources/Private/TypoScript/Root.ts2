@@ -14,7 +14,10 @@ prototype(JohannesSteu.Bootstrap.GridSystem:Container) < prototype(TYPO3.Neos:Co
 prototype(JohannesSteu.Bootstrap.GridSystem:GridRow) < prototype(TYPO3.Neos:Content) {
 	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/GridRow.html'
 
-	additionalClasses = ${q(node).property('classes')}
+	classes = TYPO3.TypoScript:Array {
+		defaultClass = 'row'
+		additionalClasses = ${q(node).property('classes') ? (' ' + q(node).property('classes')) : ''}
+	}
 
 	columns = TYPO3.TypoScript:Collection {
 		collection = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]')}
@@ -50,7 +53,12 @@ prototype(JohannesSteu.Bootstrap.GridSystem:CustomRow) < prototype(TYPO3.Neos:Co
 	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/CustomRow.html'
 
 	attributes.class.@process.nodeType >
-	attributes.class = ${'row ' + q(node).property('classes')}
+
+	classes = TYPO3.TypoScript:Array {
+		defaultClass = 'row'
+
+		classes = ${q(node).property('classes') ? (' ' + q(node).property('classes')) : ''}
+	}
 
 	columns = TYPO3.TypoScript:Collection {
 		nodePath = ${q(node).children('columns').property('_path')}
@@ -65,7 +73,9 @@ prototype(JohannesSteu.Bootstrap.GridSystem:CustomColumn) < prototype(TYPO3.Neos
 	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/CustomColumn.html'
 
 	classes = TYPO3.TypoScript:Array {
-		sizeXS = ${q(node).property('sizeXS') ? (q(node).property('sizeXS')) : ''}
+		class = 'col'
+
+		sizeXS = ${q(node).property('sizeXS') ? (' ' + q(node).property('sizeXS')) : ''}
 		sizeSM = ${q(node).property('sizeSM') ? (' ' + q(node).property('sizeSM')) : ''}
 		sizeMD = ${q(node).property('sizeMD') ? (' ' + q(node).property('sizeMD')) : ''}
 		sizeLG = ${q(node).property('sizeLG') ? (' ' + q(node).property('sizeLG')) : ''}
