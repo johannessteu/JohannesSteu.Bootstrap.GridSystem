@@ -18,31 +18,32 @@ use TYPO3\Flow\Configuration\ConfigurationManager;
  *
  *
  */
-class GridLayoutViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
+class GridLayoutViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper
+{
 
-	/**
-	 * @Flow\Inject
-	 * @var ConfigurationManager
-	 */
-	protected $configurationManager;
+    /**
+     * @Flow\Inject
+     * @var ConfigurationManager
+     */
+    protected $configurationManager;
 
-	/**
-	 * Renders an HTML tag from a given asset.
-	 *
-	 * @param string $layout
-	 * @param int $columnNo
-	 * @return string
-	 */
-	public function render($layout, $columnNo = 1) {
-		$settings = $this->configurationManager->getConfiguration(ConfigurationManager::CONFIGURATION_TYPE_SETTINGS, 'JohannesSteu.Bootstrap.GridSystem.Layouts');
+    /**
+     * Renders the layout class
+     *
+     * @param string $layout
+     * @param int $columnNo
+     * @return string
+     */
+    public function render($layout, $columnNo = 1)
+    {
+        $settings = $this->configurationManager->getConfiguration(ConfigurationManager::CONFIGURATION_TYPE_SETTINGS, 'JohannesSteu.Bootstrap.GridSystem.Layouts');
 
-		if(array_key_exists($layout, $settings)){
-			if(array_key_exists("col-".$columnNo, $settings[$layout])){
-				return $settings[$layout]["col-".$columnNo];
-			}
-		}
+        if (array_key_exists($layout, $settings)) {
+            if (array_key_exists('col-' . $columnNo, $settings[$layout])) {
+                return $settings[$layout]['col-' . $columnNo];
+            }
+        }
 
-		return "";
-	}
-
+        return '';
+    }
 }
