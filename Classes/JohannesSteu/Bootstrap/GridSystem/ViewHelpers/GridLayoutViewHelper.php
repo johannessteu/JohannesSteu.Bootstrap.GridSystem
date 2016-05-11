@@ -1,4 +1,5 @@
 <?php
+
 namespace JohannesSteu\Bootstrap\GridSystem\ViewHelpers;
 
 /*                                                                        *
@@ -14,13 +15,8 @@ namespace JohannesSteu\Bootstrap\GridSystem\ViewHelpers;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Configuration\ConfigurationManager;
 
-/**
- *
- *
- */
 class GridLayoutViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper
 {
-
     /**
      * @Flow\Inject
      * @var ConfigurationManager
@@ -28,10 +24,11 @@ class GridLayoutViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelp
     protected $configurationManager;
 
     /**
-     * Renders the layout class
+     * Renders the layout class.
      *
      * @param string $layout
-     * @param int $columnNo
+     * @param int   $columnNo
+     *
      * @return string
      */
     public function render($layout, $columnNo = 1)
@@ -39,8 +36,8 @@ class GridLayoutViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelp
         $settings = $this->configurationManager->getConfiguration(ConfigurationManager::CONFIGURATION_TYPE_SETTINGS, 'JohannesSteu.Bootstrap.GridSystem.Layouts');
 
         if (array_key_exists($layout, $settings)) {
-            if (array_key_exists('col-' . $columnNo, $settings[$layout])) {
-                return $settings[$layout]['col-' . $columnNo];
+            if (array_key_exists('col-'.$columnNo, $settings[$layout])) {
+                return $settings[$layout]['col-'.$columnNo];
             }
         }
 
