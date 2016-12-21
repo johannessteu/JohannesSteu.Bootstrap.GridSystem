@@ -14,8 +14,9 @@ namespace JohannesSteu\Bootstrap\GridSystem\ViewHelpers;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Configuration\ConfigurationManager;
+use Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper;
 
-class GridLayoutViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper
+class GridLayoutViewHelper extends AbstractViewHelper
 {
     /**
      * @Flow\Inject
