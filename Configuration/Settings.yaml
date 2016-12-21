@@ -39,11 +39,11 @@ JohannesSteu:
           col-4: 'col col-xs-12 col-sm-3'
 Neos:
   Neos:
-    typoScript:
-      autoInclude:
-        JohannesSteu.Bootstrap.GridSystem: true
     nodeTypes:
       groups:
         grid:
           position: '150'
           label: 'Bootstrap Grids'
+    fusion:
+      autoInclude:
+        JohannesSteu.Bootstrap.GridSystem: true
