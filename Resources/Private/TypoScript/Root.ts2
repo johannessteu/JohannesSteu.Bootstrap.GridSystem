@@ -1,17 +1,17 @@
 prototype(JohannesSteu.Bootstrap.GridSystem:Container) >
-prototype(JohannesSteu.Bootstrap.GridSystem:Container) < prototype(TYPO3.Neos:Content) {
+prototype(JohannesSteu.Bootstrap.GridSystem:Container) < prototype(Neos.Neos:Content) {
 	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/Container.html'
 
 	attributes.class.@process.nodeType >
 	attributes.class = ${q(node).property('layout') + " " + q(node).property('classes')}
 
-	content = TYPO3.Neos:ContentCollection {
+	content = Neos.Neos:ContentCollection {
 		nodePath = ${q(node).children('containerContent').property('_path')}
 		collection = ${q(node).children('containerContent').children()}
 	}
 }
 
-prototype(JohannesSteu.Bootstrap.GridSystem:GridRow) < prototype(TYPO3.Neos:Content) {
+prototype(JohannesSteu.Bootstrap.GridSystem:GridRow) < prototype(Neos.Neos:Content) {
 	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/GridRow.html'
 
 	classes = Neos.Fusion:Array {
@@ -20,7 +20,7 @@ prototype(JohannesSteu.Bootstrap.GridSystem:GridRow) < prototype(TYPO3.Neos:Cont
 	}
 
 	columns = Neos.Fusion:Collection {
-		collection = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]')}
+		collection = ${q(node).children('[instanceof Neos.Neos:ContentCollection]')}
 		itemRenderer = JohannesSteu.Bootstrap.GridSystem:GridColumn
 		itemName = 'node'
 		iterationName = 'iteration'
@@ -34,7 +34,7 @@ prototype(JohannesSteu.Bootstrap.GridSystem:GridColumn) < prototype(Neos.Fusion:
 	layout = ${q(node).parent().property('layout')}
 	iteration = ${iteration.cycle}
 
-	columnContent = TYPO3.Neos:ContentCollection {
+	columnContent = Neos.Neos:ContentCollection {
 		nodePath = '.'
 	}
 }
@@ -49,7 +49,7 @@ prototype(JohannesSteu.Bootstrap.GridSystem:FourColumn) >
 prototype(JohannesSteu.Bootstrap.GridSystem:FourColumn) < prototype(JohannesSteu.Bootstrap.GridSystem:GridRow)
 
 prototype(JohannesSteu.Bootstrap.GridSystem:CustomRow) >
-prototype(JohannesSteu.Bootstrap.GridSystem:CustomRow) < prototype(TYPO3.Neos:Content) {
+prototype(JohannesSteu.Bootstrap.GridSystem:CustomRow) < prototype(Neos.Neos:Content) {
 	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/CustomRow.html'
 
 	attributes.class.@process.nodeType >
@@ -69,7 +69,7 @@ prototype(JohannesSteu.Bootstrap.GridSystem:CustomRow) < prototype(TYPO3.Neos:Co
 }
 
 prototype(JohannesSteu.Bootstrap.GridSystem:CustomColumn) >
-prototype(JohannesSteu.Bootstrap.GridSystem:CustomColumn) < prototype(TYPO3.Neos:Content) {
+prototype(JohannesSteu.Bootstrap.GridSystem:CustomColumn) < prototype(Neos.Neos:Content) {
 	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/CustomColumn.html'
 
 	classes = Neos.Fusion:Array {
@@ -99,7 +99,7 @@ prototype(JohannesSteu.Bootstrap.GridSystem:CustomColumn) < prototype(TYPO3.Neos
 		pushLG = ${q(node).property('pushLG') ? (' ' + q(node).property('pullLG')) : ''}
 	}
 
-	columnContent = TYPO3.Neos:ContentCollection {
+	columnContent = Neos.Neos:ContentCollection {
 		nodePath = ${q(node).children('column').property('_path')}
 	}
 }
