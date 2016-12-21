@@ -5,7 +5,7 @@
       'JohannesSteu.Bootstrap.GridSystem:CustomColumn': false
 'JohannesSteu.Bootstrap.GridSystem:GridTab':
   superTypes:
-    'TYPO3.Neos:Content': '1'
+    'TYPO3.Neos:Content': true
   abstract: true
   ui:
     inspector:
@@ -19,7 +19,7 @@
           label: Layout
 'JohannesSteu.Bootstrap.GridSystem:Container':
   superTypes:
-    'TYPO3.Neos:Content': '1'
+    'TYPO3.Neos:Content': true
   ui:
     group: grid
     label: Container
@@ -61,7 +61,7 @@
             placeholder: 'myClass anotherClass'
 'JohannesSteu.Bootstrap.GridSystem:Row':
   superTypes:
-    'JohannesSteu.Bootstrap.GridSystem:GridTab': '1'
+    'JohannesSteu.Bootstrap.GridSystem:GridTab': true
   abstract: true
   ui:
     group: grid
@@ -84,7 +84,7 @@
           group: gridsystem
 'JohannesSteu.Bootstrap.GridSystem:TwoColumn':
   superTypes:
-    'JohannesSteu.Bootstrap.GridSystem:Row': '1'
+    'JohannesSteu.Bootstrap.GridSystem:Row': true
   ui:
     label: 'Two Columns'
   childNodes:
@@ -116,7 +116,7 @@
                 label: '80% / 20%'
 'JohannesSteu.Bootstrap.GridSystem:ThreeColumn':
   superTypes:
-    'JohannesSteu.Bootstrap.GridSystem:Row': '1'
+    'JohannesSteu.Bootstrap.GridSystem:Row': true
   ui:
     label: 'Three Columns'
   childNodes:
@@ -140,7 +140,7 @@
                 label: '25% / 50% / 25%'
 'JohannesSteu.Bootstrap.GridSystem:FourColumn':
   superTypes:
-    'JohannesSteu.Bootstrap.GridSystem:Row': '1'
+    'JohannesSteu.Bootstrap.GridSystem:Row': true
   ui:
     label: 'Four Columns'
   childNodes:
@@ -164,7 +164,7 @@
                 label: '25% / 25% / 25% / 25%'
 'JohannesSteu.Bootstrap.GridSystem:CustomRow':
   superTypes:
-    'JohannesSteu.Bootstrap.GridSystem:Row': '1'
+    'JohannesSteu.Bootstrap.GridSystem:Row': true
   ui:
     group: grid
     label: Row
@@ -188,7 +188,7 @@
             placeholder: 'myClass anotherClass'
 'JohannesSteu.Bootstrap.GridSystem:CustomColumn':
   superTypes:
-    'JohannesSteu.Bootstrap.GridSystem:GridTab': '1'
+    'JohannesSteu.Bootstrap.GridSystem:GridTab': true
   ui:
     label: Column
     group: grid
