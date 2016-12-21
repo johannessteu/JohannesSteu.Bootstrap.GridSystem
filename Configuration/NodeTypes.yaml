@@ -1,11 +1,11 @@
 
-'TYPO3.Neos:ContentCollection':
+'Neos.Neos:ContentCollection':
   constraints:
     nodeTypes:
       'JohannesSteu.Bootstrap.GridSystem:CustomColumn': false
 'JohannesSteu.Bootstrap.GridSystem:GridTab':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
   abstract: true
   ui:
     inspector:
@@ -19,7 +19,7 @@
           label: Layout
 'JohannesSteu.Bootstrap.GridSystem:Container':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
   ui:
     group: grid
     label: Container
@@ -32,7 +32,7 @@
           position: 5
   childNodes:
     containercontent:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   properties:
     layout:
       type: string
@@ -42,7 +42,7 @@
         reloadIfChanged: true
         inspector:
           group: container
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               container:
@@ -75,7 +75,7 @@
         label: Predefined
         inspector:
           group: gridsystem
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
     classes:
       type: string
       ui:
@@ -89,9 +89,9 @@
     label: 'Two Columns'
   childNodes:
     columnleft:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
     columnright:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   properties:
     layout:
       defaultValue: 50-50
@@ -121,11 +121,11 @@
     label: 'Three Columns'
   childNodes:
     columnleft:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
     columnmiddle:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
     columnright:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   properties:
     layout:
       defaultValue: 33-33-33
@@ -145,13 +145,13 @@
     label: 'Four Columns'
   childNodes:
     column1:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
     column2:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
     column3:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
     column4:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   properties:
     layout:
       defaultValue: 25-25-25-25
@@ -172,7 +172,7 @@
     inlineEditable: true
   childNodes:
     columns:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
       constraints:
         nodeTypes:
           '*': false
@@ -216,7 +216,7 @@
           tab: gridtab
   childNodes:
     column:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   properties:
     sizeXS:
       type: string
@@ -226,7 +226,7 @@
         reloadIfChanged: true
         inspector:
           group: size
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               '':
@@ -263,7 +263,7 @@
         reloadIfChanged: true
         inspector:
           group: size
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               '':
@@ -300,7 +300,7 @@
         reloadIfChanged: true
         inspector:
           group: size
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               '':
@@ -337,7 +337,7 @@
         reloadIfChanged: true
         inspector:
           group: size
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               '':
@@ -372,7 +372,7 @@
       ui:
         inspector:
           group: visible
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             multiple: true
             placeholder: Choose
@@ -391,7 +391,7 @@
       ui:
         inspector:
           group: hidden
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             multiple: true
             placeholder: Choose
@@ -411,7 +411,7 @@
         label: XS
         inspector:
           group: offset
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: Choose
             values:
@@ -448,7 +448,7 @@
         label: SM
         inspector:
           group: offset
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: Choose
             values:
@@ -485,7 +485,7 @@
         label: MD
         inspector:
           group: offset
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: Choose
             values:
@@ -522,7 +522,7 @@
         label: LG
         inspector:
           group: offset
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: Choose
             values:
@@ -559,7 +559,7 @@
         label: XS
         inspector:
           group: orderingPull
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: Choose
             values:
@@ -596,7 +596,7 @@
         label: SM
         inspector:
           group: orderingPull
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: Choose
             values:
@@ -633,7 +633,7 @@
         label: MD
         inspector:
           group: orderingPull
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: Choose
             values:
@@ -670,7 +670,7 @@
         label: LG
         inspector:
           group: orderingPull
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: Choose
             values:
@@ -707,7 +707,7 @@
         label: XS
         inspector:
           group: orderingPush
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: Choose
             values:
@@ -744,7 +744,7 @@
         label: SM
         inspector:
           group: orderingPush
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: Choose
             values:
@@ -781,7 +781,7 @@
         label: MD
         inspector:
           group: orderingPush
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: Choose
             values:
@@ -818,7 +818,7 @@
         label: LG
         inspector:
           group: orderingPush
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: Choose
             values:
