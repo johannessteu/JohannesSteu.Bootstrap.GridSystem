@@ -1,35 +1,34 @@
+
 'TYPO3.Neos:ContentCollection':
   constraints:
     nodeTypes:
-      'JohannesSteu.Bootstrap.GridSystem:CustomColumn': FALSE
-
+      'JohannesSteu.Bootstrap.GridSystem:CustomColumn': false
 'JohannesSteu.Bootstrap.GridSystem:GridTab':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-  abstract: TRUE
+    'TYPO3.Neos:Content': '1'
+  abstract: true
   ui:
     inspector:
       tabs:
         gridtab:
           label: 'Grid settings'
-          icon: 'icon-columns'
+          icon: icon-columns
       groups:
         gridsystem:
-          tab: 'gridtab'
-          label: 'Layout'
-
+          tab: gridtab
+          label: Layout
 'JohannesSteu.Bootstrap.GridSystem:Container':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'TYPO3.Neos:Content': '1'
   ui:
-    group: 'grid'
-    label: 'Container'
-    icon: 'icon-folder-open-alt'
-    inlineEditable: TRUE
+    group: grid
+    label: Container
+    icon: icon-folder-open-alt
+    inlineEditable: true
     inspector:
       groups:
         container:
-          label: 'Container-Layout'
+          label: Container-Layout
           position: 5
   childNodes:
     containercontent:
@@ -37,57 +36,55 @@
   properties:
     layout:
       type: string
-      defaultValue: 'container'
+      defaultValue: container
       ui:
-        label: 'Layout'
-        reloadIfChanged: TRUE
+        label: Layout
+        reloadIfChanged: true
         inspector:
-          group: 'container'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: container
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-              'container':
+              container:
                 label: 'Fixed container'
-              'container-fluid':
+              container-fluid:
                 label: 'Fluid container'
     classes:
       type: string
       ui:
         label: 'Additional Classes'
-        reloadIfChanged: TRUE
-        placeHolder: "test"
+        reloadIfChanged: true
+        placeHolder: test
         inspector:
-          group: 'container'
+          group: container
           editorOptions:
             placeholder: 'myClass anotherClass'
-
 'JohannesSteu.Bootstrap.GridSystem:Row':
   superTypes:
-    'JohannesSteu.Bootstrap.GridSystem:GridTab': TRUE
-  abstract: TRUE
+    'JohannesSteu.Bootstrap.GridSystem:GridTab': '1'
+  abstract: true
   ui:
-    group: 'grid'
-    label: 'GridRow'
-    icon: 'icon-columns'
-    inlineEditable: TRUE
+    group: grid
+    label: GridRow
+    icon: icon-columns
+    inlineEditable: true
   properties:
     layout:
       type: string
       ui:
-        label: 'Predefined'
+        label: Predefined
         inspector:
-          group: 'gridsystem'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: gridsystem
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
     classes:
       type: string
       ui:
         label: 'Custom classes'
         inspector:
-          group: 'gridsystem'
-
+          group: gridsystem
 'JohannesSteu.Bootstrap.GridSystem:TwoColumn':
   superTypes:
-    'JohannesSteu.Bootstrap.GridSystem:Row': TRUE
+    'JohannesSteu.Bootstrap.GridSystem:Row': '1'
   ui:
     label: 'Two Columns'
   childNodes:
@@ -97,30 +94,29 @@
       type: 'TYPO3.Neos:ContentCollection'
   properties:
     layout:
-      defaultValue: '50-50'
+      defaultValue: 50-50
       ui:
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           editorOptions:
             values:
-              '50-50':
+              50-50:
                 label: '50% / 50%'
-              '75-25':
+              75-25:
                 label: '75% / 25%'
-              '25-75':
+              25-75:
                 label: '25% / 75%'
-              '66-33':
+              66-33:
                 label: '66% / 33%'
-              '33-66':
+              33-66:
                 label: '33% / 66%'
-              '20-80':
+              20-80:
                 label: '20% / 80%'
-              '80-20':
+              80-20:
                 label: '80% / 20%'
-
 'JohannesSteu.Bootstrap.GridSystem:ThreeColumn':
   superTypes:
-    'JohannesSteu.Bootstrap.GridSystem:Row': TRUE
+    'JohannesSteu.Bootstrap.GridSystem:Row': '1'
   ui:
     label: 'Three Columns'
   childNodes:
@@ -132,20 +128,19 @@
       type: 'TYPO3.Neos:ContentCollection'
   properties:
     layout:
-      defaultValue: '33-33-33'
+      defaultValue: 33-33-33
       ui:
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           editorOptions:
             values:
-              '33-33-33':
+              33-33-33:
                 label: '33% / 33% / 33%'
-              '25-50-25':
+              25-50-25:
                 label: '25% / 50% / 25%'
-
 'JohannesSteu.Bootstrap.GridSystem:FourColumn':
   superTypes:
-    'JohannesSteu.Bootstrap.GridSystem:Row': TRUE
+    'JohannesSteu.Bootstrap.GridSystem:Row': '1'
   ui:
     label: 'Four Columns'
   childNodes:
@@ -159,699 +154,697 @@
       type: 'TYPO3.Neos:ContentCollection'
   properties:
     layout:
-      defaultValue: '25-25-25-25'
+      defaultValue: 25-25-25-25
       ui:
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           editorOptions:
             values:
-              '25-25-25-25':
+              25-25-25-25:
                 label: '25% / 25% / 25% / 25%'
-
 'JohannesSteu.Bootstrap.GridSystem:CustomRow':
   superTypes:
-    'JohannesSteu.Bootstrap.GridSystem:Row': TRUE
+    'JohannesSteu.Bootstrap.GridSystem:Row': '1'
   ui:
-    group: 'grid'
-    label: 'Row'
-    icon: 'icon-columns'
-    inlineEditable: TRUE
+    group: grid
+    label: Row
+    icon: icon-columns
+    inlineEditable: true
   childNodes:
     columns:
       type: 'TYPO3.Neos:ContentCollection'
       constraints:
         nodeTypes:
-          '*': FALSE
-          'JohannesSteu.Bootstrap.GridSystem:CustomColumn': TRUE
+          '*': false
+          'JohannesSteu.Bootstrap.GridSystem:CustomColumn': true
   properties:
     classes:
       type: string
       ui:
         label: 'Custom classes'
         inspector:
-          group: 'gridsystem'
+          group: gridsystem
           editorOptions:
             placeholder: 'myClass anotherClass'
-
 'JohannesSteu.Bootstrap.GridSystem:CustomColumn':
   superTypes:
-    'JohannesSteu.Bootstrap.GridSystem:GridTab': TRUE
+    'JohannesSteu.Bootstrap.GridSystem:GridTab': '1'
   ui:
-    label: 'Column'
-    group: 'grid'
-    icon: 'icon-columns'
-    inlineEditable: TRUE
+    label: Column
+    group: grid
+    icon: icon-columns
+    inlineEditable: true
     inspector:
       groups:
         size:
           label: 'Grid size'
-          tab: 'gridtab'
+          tab: gridtab
         visible:
-          label: 'Visibility'
-          tab: 'gridtab'
+          label: Visibility
+          tab: gridtab
         hidden:
-          label: 'Hidden'
-          tab: 'gridtab'
+          label: Hidden
+          tab: gridtab
         offset:
-          label: 'Offset'
-          tab: 'gridtab'
+          label: Offset
+          tab: gridtab
         orderingPull:
           label: 'Ordering Pull'
-          tab: 'gridtab'
+          tab: gridtab
         orderingPush:
           label: 'Ordering Push'
-          tab: 'gridtab'
+          tab: gridtab
   childNodes:
     column:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
     sizeXS:
       type: string
-      defaultValue: 'col-xs-12'
+      defaultValue: col-xs-12
       ui:
         label: 'Size XS'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'size'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: size
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               '':
-                label: 'none'
-              'col-xs-1':
+                label: none
+              col-xs-1:
                 label: '1'
-              'col-xs-2':
+              col-xs-2:
                 label: '2'
-              'col-xs-3':
+              col-xs-3:
                 label: '3'
-              'col-xs-4':
+              col-xs-4:
                 label: '4'
-              'col-xs-5':
+              col-xs-5:
                 label: '5'
-              'col-xs-6':
+              col-xs-6:
                 label: '6'
-              'col-xs-7':
+              col-xs-7:
                 label: '7'
-              'col-xs-8':
+              col-xs-8:
                 label: '8'
-              'col-xs-9':
+              col-xs-9:
                 label: '9'
-              'col-xs-10':
+              col-xs-10:
                 label: '10'
-              'col-xs-11':
+              col-xs-11:
                 label: '11'
-              'col-xs-12':
+              col-xs-12:
                 label: '12'
     sizeSM:
       type: string
       defaultValue: ''
       ui:
         label: 'Size SM'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'size'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: size
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               '':
-                label: 'none'
-              'col-sm-1':
+                label: none
+              col-sm-1:
                 label: '1'
-              'col-sm-2':
+              col-sm-2:
                 label: '2'
-              'col-sm-3':
+              col-sm-3:
                 label: '3'
-              'col-sm-4':
+              col-sm-4:
                 label: '4'
-              'col-sm-5':
+              col-sm-5:
                 label: '5'
-              'col-sm-6':
+              col-sm-6:
                 label: '6'
-              'col-sm-7':
+              col-sm-7:
                 label: '7'
-              'col-sm-8':
+              col-sm-8:
                 label: '8'
-              'col-sm-9':
+              col-sm-9:
                 label: '9'
-              'col-sm-10':
+              col-sm-10:
                 label: '10'
-              'col-sm-11':
+              col-sm-11:
                 label: '11'
-              'col-sm-12':
+              col-sm-12:
                 label: '12'
     sizeMD:
       type: string
       defaultValue: ''
       ui:
         label: 'Size MD'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'size'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: size
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               '':
-                label: 'none'
-              'col-md-1':
+                label: none
+              col-md-1:
                 label: '1'
-              'col-md-2':
+              col-md-2:
                 label: '2'
-              'col-md-3':
+              col-md-3:
                 label: '3'
-              'col-md-4':
+              col-md-4:
                 label: '4'
-              'col-md-5':
+              col-md-5:
                 label: '5'
-              'col-md-6':
+              col-md-6:
                 label: '6'
-              'col-md-7':
+              col-md-7:
                 label: '7'
-              'col-md-8':
+              col-md-8:
                 label: '8'
-              'col-md-9':
+              col-md-9:
                 label: '9'
-              'col-md-10':
+              col-md-10:
                 label: '10'
-              'col-md-11':
+              col-md-11:
                 label: '11'
-              'col-md-12':
+              col-md-12:
                 label: '12'
     sizeLG:
       type: string
       defaultValue: ''
       ui:
         label: 'Size LG'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'size'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: size
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               '':
-                label: 'none'
-              'col-lg-1':
+                label: none
+              col-lg-1:
                 label: '1'
-              'col-lg-2':
+              col-lg-2:
                 label: '2'
-              'col-lg-3':
+              col-lg-3:
                 label: '3'
-              'col-lg-4':
+              col-lg-4:
                 label: '4'
-              'col-lg-5':
+              col-lg-5:
                 label: '5'
-              'col-lg-6':
+              col-lg-6:
                 label: '6'
-              'col-lg-7':
+              col-lg-7:
                 label: '7'
-              'col-lg-8':
+              col-lg-8:
                 label: '8'
-              'col-lg-9':
+              col-lg-9:
                 label: '9'
-              'col-lg-10':
+              col-lg-10:
                 label: '10'
-              'col-lg-11':
+              col-lg-11:
                 label: '11'
-              'col-lg-12':
+              col-lg-12:
                 label: '12'
     visible:
       type: array
       defaultValue: ''
       ui:
         inspector:
-          group: 'visible'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: visible
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            multiple: TRUE
-            placeholder: 'Choose'
+            multiple: true
+            placeholder: Choose
             values:
-              'visible-xs':
-                label: 'XS'
-              'visible-sm':
-                label: 'SM'
-              'visible-md':
-                label: 'MD'
-              'visible-lg':
-                label: 'LG'
+              visible-xs:
+                label: XS
+              visible-sm:
+                label: SM
+              visible-md:
+                label: MD
+              visible-lg:
+                label: LG
     hidden:
       type: array
       defaultValue: ''
       ui:
         inspector:
-          group: 'hidden'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: hidden
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            multiple: TRUE
-            placeholder: 'Choose'
+            multiple: true
+            placeholder: Choose
             values:
-              'hidden-xs':
-                label: 'XS'
-              'hidden-sm':
-                label: 'SM'
-              'hidden-md':
-                label: 'MD'
-              'hidden-lg':
-                label: 'LG'
+              hidden-xs:
+                label: XS
+              hidden-sm:
+                label: SM
+              hidden-md:
+                label: MD
+              hidden-lg:
+                label: LG
     offsetXS:
       type: string
       defaultValue: ''
       ui:
-        label: 'XS'
+        label: XS
         inspector:
-          group: 'offset'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: offset
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            placeholder: 'Choose'
+            placeholder: Choose
             values:
               '':
-                label: 'none'
-              'col-xs-offset-1':
+                label: none
+              col-xs-offset-1:
                 label: '1'
-              'col-xs-offset-2':
+              col-xs-offset-2:
                 label: '2'
-              'col-xs-offset-3':
+              col-xs-offset-3:
                 label: '3'
-              'col-xs-offset-4':
+              col-xs-offset-4:
                 label: '4'
-              'col-xs-offset-5':
+              col-xs-offset-5:
                 label: '5'
-              'col-xs-offset-6':
+              col-xs-offset-6:
                 label: '6'
-              'col-xs-offset-7':
+              col-xs-offset-7:
                 label: '7'
-              'col-xs-offset-8':
+              col-xs-offset-8:
                 label: '8'
-              'col-xs-offset-9':
+              col-xs-offset-9:
                 label: '9'
-              'col-xs-offset-10':
+              col-xs-offset-10:
                 label: '10'
-              'col-xs-offset-11':
+              col-xs-offset-11:
                 label: '11'
-              'col-xs-offset-12':
+              col-xs-offset-12:
                 label: '12'
     offsetSM:
       type: string
       defaultValue: ''
       ui:
-        label: 'SM'
+        label: SM
         inspector:
-          group: 'offset'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: offset
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            placeholder: 'Choose'
+            placeholder: Choose
             values:
               '':
-                label: 'none'
-              'col-sm-offset-1':
+                label: none
+              col-sm-offset-1:
                 label: '1'
-              'col-sm-offset-2':
+              col-sm-offset-2:
                 label: '2'
-              'col-sm-offset-3':
+              col-sm-offset-3:
                 label: '3'
-              'col-sm-offset-4':
+              col-sm-offset-4:
                 label: '4'
-              'col-sm-offset-5':
+              col-sm-offset-5:
                 label: '5'
-              'col-sm-offset-6':
+              col-sm-offset-6:
                 label: '6'
-              'col-sm-offset-7':
+              col-sm-offset-7:
                 label: '7'
-              'col-sm-offset-8':
+              col-sm-offset-8:
                 label: '8'
-              'col-sm-offset-9':
+              col-sm-offset-9:
                 label: '9'
-              'col-sm-offset-10':
+              col-sm-offset-10:
                 label: '10'
-              'col-sm-offset-11':
+              col-sm-offset-11:
                 label: '11'
-              'col-sm-offset-12':
+              col-sm-offset-12:
                 label: '12'
     offsetMD:
       type: string
       defaultValue: ''
       ui:
-        label: 'MD'
+        label: MD
         inspector:
-          group: 'offset'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: offset
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            placeholder: 'Choose'
+            placeholder: Choose
             values:
               '':
-                label: 'none'
-              'col-md-offset-1':
+                label: none
+              col-md-offset-1:
                 label: '1'
-              'col-md-offset-2':
+              col-md-offset-2:
                 label: '2'
-              'col-md-offset-3':
+              col-md-offset-3:
                 label: '3'
-              'col-md-offset-4':
+              col-md-offset-4:
                 label: '4'
-              'col-md-offset-5':
+              col-md-offset-5:
                 label: '5'
-              'col-md-offset-6':
+              col-md-offset-6:
                 label: '6'
-              'col-md-offset-7':
+              col-md-offset-7:
                 label: '7'
-              'col-md-offset-8':
+              col-md-offset-8:
                 label: '8'
-              'col-md-offset-9':
+              col-md-offset-9:
                 label: '9'
-              'col-md-offset-10':
+              col-md-offset-10:
                 label: '10'
-              'col-md-offset-11':
+              col-md-offset-11:
                 label: '11'
-              'col-md-offset-12':
+              col-md-offset-12:
                 label: '12'
     offsetLG:
       type: string
       defaultValue: ''
       ui:
-        label: 'LG'
+        label: LG
         inspector:
-          group: 'offset'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: offset
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            placeholder: 'Choose'
+            placeholder: Choose
             values:
               '':
-                label: 'none'
-              'col-lg-offset-1':
+                label: none
+              col-lg-offset-1:
                 label: '1'
-              'col-lg-offset-2':
+              col-lg-offset-2:
                 label: '2'
-              'col-lg-offset-3':
+              col-lg-offset-3:
                 label: '3'
-              'col-lg-offset-4':
+              col-lg-offset-4:
                 label: '4'
-              'col-lg-offset-5':
+              col-lg-offset-5:
                 label: '5'
-              'col-lg-offset-6':
+              col-lg-offset-6:
                 label: '6'
-              'col-lg-offset-7':
+              col-lg-offset-7:
                 label: '7'
-              'col-lg-offset-8':
+              col-lg-offset-8:
                 label: '8'
-              'col-lg-offset-9':
+              col-lg-offset-9:
                 label: '9'
-              'col-lg-offset-10':
+              col-lg-offset-10:
                 label: '10'
-              'col-lg-offset-11':
+              col-lg-offset-11:
                 label: '11'
-              'col-lg-offset-12':
+              col-lg-offset-12:
                 label: '12'
     pullXS:
       type: string
       defaultValue: ''
       ui:
-        label: 'XS'
+        label: XS
         inspector:
-          group: 'orderingPull'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: orderingPull
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            placeholder: 'Choose'
+            placeholder: Choose
             values:
               '':
-                label: 'none'
-              'col-xs-pull-1':
+                label: none
+              col-xs-pull-1:
                 label: '1'
-              'col-xs-pull-2':
+              col-xs-pull-2:
                 label: '2'
-              'col-xs-pull-3':
+              col-xs-pull-3:
                 label: '3'
-              'col-xs-pull-4':
+              col-xs-pull-4:
                 label: '4'
-              'col-xs-pull-5':
+              col-xs-pull-5:
                 label: '5'
-              'col-xs-pull-6':
+              col-xs-pull-6:
                 label: '6'
-              'col-xs-pull-7':
+              col-xs-pull-7:
                 label: '7'
-              'col-xs-pull-8':
+              col-xs-pull-8:
                 label: '8'
-              'col-xs-pull-9':
+              col-xs-pull-9:
                 label: '9'
-              'col-xs-pull-10':
+              col-xs-pull-10:
                 label: '10'
-              'col-xs-pull-11':
+              col-xs-pull-11:
                 label: '11'
-              'col-xs-pull-12':
+              col-xs-pull-12:
                 label: '12'
     pullSM:
       type: string
       defaultValue: ''
       ui:
-        label: 'SM'
+        label: SM
         inspector:
-          group: 'orderingPull'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: orderingPull
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            placeholder: 'Choose'
+            placeholder: Choose
             values:
               '':
-                label: 'none'
-              'col-sm-pull-1':
+                label: none
+              col-sm-pull-1:
                 label: '1'
-              'col-sm-pull-2':
+              col-sm-pull-2:
                 label: '2'
-              'col-sm-pull-3':
+              col-sm-pull-3:
                 label: '3'
-              'col-sm-pull-4':
+              col-sm-pull-4:
                 label: '4'
-              'col-sm-pull-5':
+              col-sm-pull-5:
                 label: '5'
-              'col-sm-pull-6':
+              col-sm-pull-6:
                 label: '6'
-              'col-sm-pull-7':
+              col-sm-pull-7:
                 label: '7'
-              'col-sm-pull-8':
+              col-sm-pull-8:
                 label: '8'
-              'col-sm-pull-9':
+              col-sm-pull-9:
                 label: '9'
-              'col-sm-pull-10':
+              col-sm-pull-10:
                 label: '10'
-              'col-sm-pull-11':
+              col-sm-pull-11:
                 label: '11'
-              'col-sm-pull-12':
+              col-sm-pull-12:
                 label: '12'
     pullMD:
       type: string
       defaultValue: ''
       ui:
-        label: 'MD'
+        label: MD
         inspector:
-          group: 'orderingPull'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: orderingPull
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            placeholder: 'Choose'
+            placeholder: Choose
             values:
               '':
-                label: 'none'
-              'col-md-pull-1':
+                label: none
+              col-md-pull-1:
                 label: '1'
-              'col-md-pull-2':
+              col-md-pull-2:
                 label: '2'
-              'col-md-pull-3':
+              col-md-pull-3:
                 label: '3'
-              'col-md-pull-4':
+              col-md-pull-4:
                 label: '4'
-              'col-md-pull-5':
+              col-md-pull-5:
                 label: '5'
-              'col-md-pull-6':
+              col-md-pull-6:
                 label: '6'
-              'col-md-pull-7':
+              col-md-pull-7:
                 label: '7'
-              'col-md-pull-8':
+              col-md-pull-8:
                 label: '8'
-              'col-md-pull-9':
+              col-md-pull-9:
                 label: '9'
-              'col-md-pull-10':
+              col-md-pull-10:
                 label: '10'
-              'col-md-pull-11':
+              col-md-pull-11:
                 label: '11'
-              'col-md-pull-12':
+              col-md-pull-12:
                 label: '12'
     pullLG:
       type: string
       defaultValue: ''
       ui:
-        label: 'LG'
+        label: LG
         inspector:
-          group: 'orderingPull'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: orderingPull
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            placeholder: 'Choose'
+            placeholder: Choose
             values:
               '':
-                label: 'none'
-              'col-lg-pull-1':
+                label: none
+              col-lg-pull-1:
                 label: '1'
-              'col-lg-pull-2':
+              col-lg-pull-2:
                 label: '2'
-              'col-lg-pull-3':
+              col-lg-pull-3:
                 label: '3'
-              'col-lg-pull-4':
+              col-lg-pull-4:
                 label: '4'
-              'col-lg-pull-5':
+              col-lg-pull-5:
                 label: '5'
-              'col-lg-pull-6':
+              col-lg-pull-6:
                 label: '6'
-              'col-lg-pull-7':
+              col-lg-pull-7:
                 label: '7'
-              'col-lg-pull-8':
+              col-lg-pull-8:
                 label: '8'
-              'col-lg-pull-9':
+              col-lg-pull-9:
                 label: '9'
-              'col-lg-pull-10':
+              col-lg-pull-10:
                 label: '10'
-              'col-lg-pull-11':
+              col-lg-pull-11:
                 label: '11'
-              'col-lg-pull-12':
+              col-lg-pull-12:
                 label: '12'
     pushXS:
       type: string
       defaultValue: ''
       ui:
-        label: 'XS'
+        label: XS
         inspector:
-          group: 'orderingPush'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: orderingPush
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            placeholder: 'Choose'
+            placeholder: Choose
             values:
               '':
-                label: 'none'
-              'col-xs-push-1':
+                label: none
+              col-xs-push-1:
                 label: '1'
-              'col-xs-push-2':
+              col-xs-push-2:
                 label: '2'
-              'col-xs-push-3':
+              col-xs-push-3:
                 label: '3'
-              'col-xs-push-4':
+              col-xs-push-4:
                 label: '4'
-              'col-xs-push-5':
+              col-xs-push-5:
                 label: '5'
-              'col-xs-push-6':
+              col-xs-push-6:
                 label: '6'
-              'col-xs-push-7':
+              col-xs-push-7:
                 label: '7'
-              'col-xs-push-8':
+              col-xs-push-8:
                 label: '8'
-              'col-xs-push-9':
+              col-xs-push-9:
                 label: '9'
-              'col-xs-push-10':
+              col-xs-push-10:
                 label: '10'
-              'col-xs-push-11':
+              col-xs-push-11:
                 label: '11'
-              'col-xs-push-12':
+              col-xs-push-12:
                 label: '12'
     pushSM:
       type: string
       defaultValue: ''
       ui:
-        label: 'SM'
+        label: SM
         inspector:
-          group: 'orderingPush'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: orderingPush
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            placeholder: 'Choose'
+            placeholder: Choose
             values:
               '':
-                label: 'none'
-              'col-sm-push-1':
+                label: none
+              col-sm-push-1:
                 label: '1'
-              'col-sm-push-2':
+              col-sm-push-2:
                 label: '2'
-              'col-sm-push-3':
+              col-sm-push-3:
                 label: '3'
-              'col-sm-push-4':
+              col-sm-push-4:
                 label: '4'
-              'col-sm-push-5':
+              col-sm-push-5:
                 label: '5'
-              'col-sm-push-6':
+              col-sm-push-6:
                 label: '6'
-              'col-sm-push-7':
+              col-sm-push-7:
                 label: '7'
-              'col-sm-push-8':
+              col-sm-push-8:
                 label: '8'
-              'col-sm-push-9':
+              col-sm-push-9:
                 label: '9'
-              'col-sm-push-10':
+              col-sm-push-10:
                 label: '10'
-              'col-sm-push-11':
+              col-sm-push-11:
                 label: '11'
-              'col-sm-push-12':
+              col-sm-push-12:
                 label: '12'
     pushMD:
       type: string
       defaultValue: ''
       ui:
-        label: 'MD'
+        label: MD
         inspector:
-          group: 'orderingPush'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: orderingPush
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            placeholder: 'Choose'
+            placeholder: Choose
             values:
               '':
-                label: 'none'
-              'col-md-push-1':
+                label: none
+              col-md-push-1:
                 label: '1'
-              'col-md-push-2':
+              col-md-push-2:
                 label: '2'
-              'col-md-push-3':
+              col-md-push-3:
                 label: '3'
-              'col-md-push-4':
+              col-md-push-4:
                 label: '4'
-              'col-md-push-5':
+              col-md-push-5:
                 label: '5'
-              'col-md-push-6':
+              col-md-push-6:
                 label: '6'
-              'col-md-push-7':
+              col-md-push-7:
                 label: '7'
-              'col-md-push-8':
+              col-md-push-8:
                 label: '8'
-              'col-md-push-9':
+              col-md-push-9:
                 label: '9'
-              'col-md-push-10':
+              col-md-push-10:
                 label: '10'
-              'col-md-push-11':
+              col-md-push-11:
                 label: '11'
-              'col-md-push-12':
+              col-md-push-12:
                 label: '12'
     pushLG:
       type: string
       defaultValue: ''
       ui:
-        label: 'LG'
+        label: LG
         inspector:
-          group: 'orderingPush'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: orderingPush
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            placeholder: 'Choose'
+            placeholder: Choose
             values:
               '':
-                label: 'none'
-              'col-lg-push-1':
+                label: none
+              col-lg-push-1:
                 label: '1'
-              'col-lg-push-2':
+              col-lg-push-2:
                 label: '2'
-              'col-lg-push-3':
+              col-lg-push-3:
                 label: '3'
-              'col-lg-push-4':
+              col-lg-push-4:
                 label: '4'
-              'col-lg-push-5':
+              col-lg-push-5:
                 label: '5'
-              'col-lg-push-6':
+              col-lg-push-6:
                 label: '6'
-              'col-lg-push-7':
+              col-lg-push-7:
                 label: '7'
-              'col-lg-push-8':
+              col-lg-push-8:
                 label: '8'
-              'col-lg-push-9':
+              col-lg-push-9:
                 label: '9'
-              'col-lg-push-10':
+              col-lg-push-10:
                 label: '10'
-              'col-lg-push-11':
+              col-lg-push-11:
                 label: '11'
-              'col-lg-push-12':
+              col-lg-push-12:
                 label: '12'
