@@ -14,12 +14,12 @@ prototype(JohannesSteu.Bootstrap.GridSystem:Container) < prototype(TYPO3.Neos:Co
 prototype(JohannesSteu.Bootstrap.GridSystem:GridRow) < prototype(TYPO3.Neos:Content) {
 	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/GridRow.html'
 
-	classes = TYPO3.TypoScript:Array {
+	classes = Neos.Fusion:Array {
 		defaultClass = 'row'
 		additionalClasses = ${q(node).property('classes') ? (' ' + q(node).property('classes')) : ''}
 	}
 
-	columns = TYPO3.TypoScript:Collection {
+	columns = Neos.Fusion:Collection {
 		collection = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]')}
 		itemRenderer = JohannesSteu.Bootstrap.GridSystem:GridColumn
 		itemName = 'node'
@@ -27,7 +27,7 @@ prototype(JohannesSteu.Bootstrap.GridSystem:GridRow) < prototype(TYPO3.Neos:Cont
 	}
 }
 
-prototype(JohannesSteu.Bootstrap.GridSystem:GridColumn) < prototype(TYPO3.TypoScript:Template) {
+prototype(JohannesSteu.Bootstrap.GridSystem:GridColumn) < prototype(Neos.Fusion:Template) {
 	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/GridColumn.html'
 
 	node = ${node}
@@ -54,13 +54,13 @@ prototype(JohannesSteu.Bootstrap.GridSystem:CustomRow) < prototype(TYPO3.Neos:Co
 
 	attributes.class.@process.nodeType >
 
-	classes = TYPO3.TypoScript:Array {
+	classes = Neos.Fusion:Array {
 		defaultClass = 'row'
 
 		classes = ${q(node).property('classes') ? (' ' + q(node).property('classes')) : ''}
 	}
 
-	columns = TYPO3.TypoScript:Collection {
+	columns = Neos.Fusion:Collection {
 		nodePath = ${q(node).children('columns').property('_path')}
 		collection = ${q(node).children('columns').children('[instanceof JohannesSteu.Bootstrap.GridSystem:CustomColumn]')}
 		itemName = 'node'
@@ -72,7 +72,7 @@ prototype(JohannesSteu.Bootstrap.GridSystem:CustomColumn) >
 prototype(JohannesSteu.Bootstrap.GridSystem:CustomColumn) < prototype(TYPO3.Neos:Content) {
 	templatePath = 'resource://JohannesSteu.Bootstrap.GridSystem/Private/Templates/NodeTypes/CustomColumn.html'
 
-	classes = TYPO3.TypoScript:Array {
+	classes = Neos.Fusion:Array {
 		class = 'col'
 
 		sizeXS = ${q(node).property('sizeXS') ? (' ' + q(node).property('sizeXS')) : ''}
